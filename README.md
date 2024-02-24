@@ -1,5 +1,4 @@
-
-![Build   Deploy Full Stack NextJs Appointment Booking App Using ReactJs](https://github.com/rrs301/Doctor-Appointment-Booking-Web-Nextjs/assets/20216436/17bce550-ef15-4ca1-bb98-ce8186f82d49)
+![Build   Deploy Full Stack NextJs Appointment Booking App Using ReactJs](https://github.com/RussPalms/Doctor-Appointment-Booking-Web-Nextjs_dev)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -27,8 +26,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 

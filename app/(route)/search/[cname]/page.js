@@ -1,28 +1,25 @@
-"use client"
-import DoctorList from '@/app/_components/DoctorList';
-import GlobalApi from '@/app/_utils/GlobalApi'
-import React, { useEffect, useState } from 'react'
+"use client";
+import DoctorList from "@/app/_components/DoctorList";
+import GlobalApi from "@/app/_utils/GlobalApi";
+import React, { useEffect, useState } from "react";
 
-function Search({params}) {
+function Search({ params }) {
+	const [doctorList, setDoctorList] = useState([]);
+	useEffect(() => {
+		console.log(params.cname);
+		getDoctors();
+	}, []);
 
-  const [doctorList,setDoctorList]=useState([]);
-  useEffect(()=>{
-    console.log(params.cname);
-    getDoctors();
-  },[])
-
-  const getDoctors=()=>{
-    GlobalApi.getDoctorByCategory(params.cname).then(resp=>{
-      setDoctorList(resp.data.data);
-    })
-  }
-  return (
-    <div className='mt-5'>
-        <DoctorList heading={params.cname}
-        doctorList={doctorList}
-        />
-    </div>
-  )
+	const getDoctors = () => {
+		GlobalApi.getDoctorByCategory(params.cname).then((resp) => {
+			setDoctorList(resp.data.data);
+		});
+	};
+	return (
+		<div className="mt-5">
+			<DoctorList heading={params.cname} doctorList={doctorList} />
+		</div>
+	);
 }
 
-export default Search
+export default Search;
