@@ -3,12 +3,7 @@ const { default: axios } = require("axios");
 const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const axiosClient = axios.create({
-	// baseURL: "https://appointment-booking-admin.onrender.com/api",
-	// baseURL: "https://rpalm.kinde.com/api",
-	// baseURL: "tasteful-flowers-f567ebd213.strapiapp.com/api",
-	// baseURL: "http://localhost:3000/api",
-	baseURL:
-		"https://doctor-appointment-booking-web-nextjs-dev.onrender.com/api",
+	baseURL: "https://doctor-appointment-admin-strapi-dev.onrender.com/api",
 	headers: {
 		Authorization: `Bearer ${API_KEY}`,
 	},
