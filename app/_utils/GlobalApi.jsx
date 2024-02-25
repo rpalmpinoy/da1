@@ -4,7 +4,7 @@ const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const axiosClient = axios.create({
 	// baseURL: "https://doctor-appointment-admin-strapi-dev.onrender.com/api",
-	baseURL: "tasteful-flowers-f567ebd213.strapiapp.com/api",
+	baseURL: "tasteful-flowers-f567ebd213.strapiapp.com:1337/api",
 	headers: {
 		Authorization: `Bearer ${API_KEY}`,
 	},
