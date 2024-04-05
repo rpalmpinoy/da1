@@ -4,7 +4,8 @@ const nextConfig = {
 	images: {
 		domains: [
 			"res.cloudinary.com",
-			"lh3.googleusercontent.com,tasteful-flowers-f567ebd213.media.strapiapp.com",
+			"thdoct.onrender.com",
+			"da1.vercel.app",
 		],
 		unoptimized: true,
 	},
