@@ -1,8 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 function DoctorList({ doctorList, heading = "Popular Doctors" }) {
+	const URL = "https://thdoct.onrender.com";
+
+	// const URL = `${process.env.STRAPI_URL}`;
+	// console.log(URL);
+
+	// console.log("DOCTOR_LIST: ", doctorList);
+	// console.log(`${process.env.RESEND_API_KEY}`);
+	// console.log(
+	// 	"https://thdoct.onrender.com/api, ",
+	// 	`${process.env.STRAPI_URL}`
+	// );
+	// useEffect(() => {
+	// 	console.log("DOCTORS_LIST", doctorList);
+	// }, [doctorList]);
 	return (
 		<div className="mb-10 px-8">
 			<h2 className="font-bold text-xl">{heading}</h2>
@@ -22,15 +36,14 @@ function DoctorList({ doctorList, heading = "Popular Doctors" }) {
 								key={index}
 							>
 								<Image
-									src={
-										doctor.attributes?.image?.data
-											?.attributes?.url
-									}
+									src={`${URL}${doctor.attributes?.image?.data?.attributes?.url}`}
 									alt="doctor"
 									width={500}
 									height={200}
 									className="h-[200px] w-full object-cover rounded-lg"
 								/>
+								{/* {console.log(process.env.STRAPI_URL)} */}
+								{/* {`https://thdoct.onrender.com${doctor.attributes?.image?.data?.attributes?.url}`} */}
 								<div className="mt-3 items-baseline flex flex-col gap-1">
 									<h2
 										className="text-[10px] bg-blue-100 p-1 rounded-full
@@ -70,6 +83,7 @@ function DoctorList({ doctorList, heading = "Popular Doctors" }) {
 					: // Skelton Effect
 					  [1, 2, 3, 4, 5, 6].map((item, index) => (
 							<div
+								key={index}
 								className="h-[220px] bg-slate-200 
             w-full rounded-lg animate-pulse"
 							></div>

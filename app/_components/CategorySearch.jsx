@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 function CategorySearch() {
+	const URL = "https://thdoct.onrender.com";
 	const [categoryList, setCategoryList] = useState([]);
 	useEffect(() => {
 		getCategoryList();
@@ -15,7 +16,8 @@ function CategorySearch() {
 
 	const getCategoryList = () => {
 		GlobalApi.getCategory().then((resp) => {
-			console.log(resp.data.data);
+			// console.log("CATEGORY_RESPONSE: ", resp.data.data);
+			console.log("CATEGORY_RESPONSE: ", resp.data[0]);
 			setCategoryList(resp.data.data);
 		});
 	};
@@ -54,10 +56,7 @@ function CategorySearch() {
           gap-2 hover:scale-110 transition-all ease-in-out"
 									>
 										<Image
-											src={
-												item.attributes?.Icon?.data
-													.attributes?.url
-											}
+											src={`${URL}${item.attributes?.Icon?.data.attributes?.url}`}
 											alt="icon"
 											width={40}
 											height={40}
@@ -70,6 +69,7 @@ function CategorySearch() {
 					  )
 					: [1, 2, 3, 4, 5, 6].map((item, index) => (
 							<div
+								key={index}
 								className=" bg-slate-200 m-2
        w-[130px] h-[120px] rounded-lg animate-pulse"
 							></div>

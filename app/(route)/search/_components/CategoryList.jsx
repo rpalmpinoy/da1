@@ -16,6 +16,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 function CategoryList() {
+	const URL = "https://thdoct.onrender.com";
 	const [categoryList, setCategoryList] = useState([]);
 	const params = usePathname();
 	const category = params.split("/")[2];
@@ -52,10 +53,7 @@ function CategoryList() {
                 `}
 									>
 										<Image
-											src={
-												item.attributes?.Icon?.data
-													.attributes?.url
-											}
+											src={`${URL}${item.attributes?.Icon?.data.attributes?.url}`}
 											alt="icon"
 											width={25}
 											height={25}

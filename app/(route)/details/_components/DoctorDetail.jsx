@@ -5,6 +5,7 @@ import React from "react";
 import BookAppointment from "./BookAppointment";
 
 function DoctorDetail({ doctor }) {
+	const URL = "https://thdoct.onrender.com";
 	const socialMediaList = [
 		{
 			id: 1,
@@ -33,7 +34,7 @@ function DoctorDetail({ doctor }) {
 				{/* Doctor Image  */}
 				<div>
 					<Image
-						src={doctor.attributes?.image?.data?.attributes?.url}
+						src={`${URL}${doctor.attributes?.image?.data?.attributes?.url}`}
 						width={200}
 						height={200}
 						alt="doctor-image"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function DoctorSuggestionList() {
+	const URL = "https://thdoct.onrender.com";
 	const [doctorList, setDoctorList] = useState([]);
 	useEffect(() => {
 		getDoctorList();
@@ -21,22 +22,21 @@ function DoctorSuggestionList() {
 
 			{doctorList.map((doctor, index) => (
 				<Link
+					key={index}
 					href={"/details/" + doctor.id}
 					className=" mb-4 p-3 shadow-sm w-full 
             cursor-pointer hover:bg-slate-100
             rounded-lg flex items-center gap-3"
 				>
 					<Image
-						src={doctor.attributes?.image?.data?.attributes?.url}
+						alt="category-imahge"
+						src={`${URL}${doctor.attributes?.image?.data?.attributes?.url}`}
 						width={70}
 						height={70}
 						className="w-[70px] h-[70px] rounded-full object-cover"
 					/>
 					<div className="mt-3 flex-col flex gap-1 items-baseline">
-						<h2
-							className="text-[10px] bg-blue-100 p-1 rounded-full px-2
-                     text-primary"
-						>
+						<h2 className="text-[10px] bg-blue-100 p-1 rounded-full px-2 text-primary">
 							{
 								doctor.attributes.categories?.data[0]
 									?.attributes?.Name
